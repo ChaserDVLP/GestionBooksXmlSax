@@ -22,9 +22,13 @@ public class AccesoXMLSax {
     public int parserXMLconBooksSAXHandler (File file) {
         
         try {
-            SAXParserFactory factory = SAXParserFactory.newInstance();
-            parser = factory.newSAXParser();
-            BooksSaxHandler sh = new BooksSaxHandler();
+            //Creamnos el SAXParserFactory
+            SAXParserFactory factory = SAXParserFactory.newInstance();  
+            //Instanciamos el objeto SAXParser           
+            parser = factory.newSAXParser(); 
+            //Clase donde instanciamos los métodos que controlan los eventos
+            BooksSaxHandler sh = new BooksSaxHandler(); 
+            //Le pasamos el documento al parser y la clase que gestiona los eventos
             parser.parse(file, sh);
             return 0;
             
